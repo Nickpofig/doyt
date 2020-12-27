@@ -3,23 +3,24 @@ The game engine I dream to write - Doyt!
 
 # Compilation
 
-==================================================
 
 if you link against *shared* glfw libray then add:
+```
 	-DGLFW_DLL 
+```
 to your application/library compilation command.
 
-==================================================
 
-DO NOT FORGET TO LINK AGAINTS LIBRARIES (ON WINDOWS):
+DO NOT FORGET TO LINK AGAINTS GLFW REQUIRED LIBRARIES (ON WINDOWS):
+```
 	-user32
 	-gdi32
 	-kernel32
 	-opengl32 // when you didn't specify context by yourself (I guess so, didn't check it)
+```
 
-============================================
 
-compiling application using clang:
+Compiling application using clang:
 
 	`Main compilation configuration`
 	clang++
@@ -46,6 +47,7 @@ GLFW uses cmake to create build files.
 	* in case of windows it will generate microsoft build files: sln, vcproj, etc.
 
 command:
+```
 	cmake
 	-DBUILD_SHARED_LIBS=ON    // if we wont glfw to be shared library
 	-DGLFW_BUILD_EXAMPLES=OFF // we don't need examples
@@ -54,18 +56,25 @@ command:
 	// this should be enough for us, 
 	// however just know that there are other glfw cmake flags
 	<glfw-directory>
+```
 **the above command will generate build files inside the called directory
 
 clean-command:
+```
 	cmake -DBUILD_SHARED_LIBS=ON -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_BUILS_DOCS=OFF .
+```
 
 
 After cmake we could call *msbuild*:
 
 command:
+```
 	msbuild 
 	GLFW.sln 
 	--property:Configuration=Release // if we want the release version
+```
 
 clean-command:
+```
 	msbuild GLFW.sln --property:Configuration=Release
+```
