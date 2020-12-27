@@ -1,0 +1,16 @@
+clang++
+
+-std=c++17
+
+--include-directory "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"
+--library-directory "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\bin\Hostx64\x64"
+--library-directory "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\lib\x64"
+
+
+--include-directory D:/Rasul/Projects/c++/glfw/include
+-lgdi32 -luser32 -lkernel32 -lopengl32
+-lD:/Rasul/Projects/c++/doyt/dependencies/glfw/src/Release/glfw3dll.lib
+
+source/main.cpp 
+
+-o doyt.exe
