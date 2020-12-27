@@ -8,16 +8,7 @@ if you link against *shared* glfw libray then add:
 ```
 	-DGLFW_DLL 
 ```
-to your application/library compilation command.
-
-
-DO NOT FORGET TO LINK AGAINTS GLFW REQUIRED LIBRARIES (ON WINDOWS):
-```
-	-user32
-	-gdi32
-	-kernel32
-	-opengl32 // when you didn't specify context by yourself (I guess so, didn't check it)
-```
+to your application/library compilation command (if it is not already defined in code as I did).
 
 
 Compiling application using clang:
@@ -33,8 +24,8 @@ Compiling application using clang:
 
 	`Links againts GLFW`
 	--include-directory D:/Rasul/Projects/c++/glfw/include
-	-lgdi32 -luser32 -lkernel32 -lopengl32
-	-lD:/Rasul/Projects/c++/doyt/dependencies/glfw/src/Release/glfw3dll.lib
+	-lgdi32 -luser32 -lkernel32 -lopengl32  // those libraries are necessary to compile on the Windows operating system
+	-lD:/Rasul/Projects/c++/doyt/dependencies/glfw/src/Release/glfw3dll.lib  // static glfw library, which will point to .dll on runtime
 
 	`Specifies which files to compile and include into final binary`
 	source/main.cpp 
@@ -59,11 +50,6 @@ command:
 ```
 **the above command will generate build files inside the called directory
 
-clean-command:
-```
-	cmake -DBUILD_SHARED_LIBS=ON -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_BUILS_DOCS=OFF .
-```
-
 
 After cmake we could call *msbuild*:
 
@@ -72,9 +58,4 @@ command:
 	msbuild 
 	GLFW.sln 
 	--property:Configuration=Release // if we want the release version
-```
-
-clean-command:
-```
-	msbuild GLFW.sln --property:Configuration=Release
 ```
