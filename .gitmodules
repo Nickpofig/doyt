@@ -2,7 +2,7 @@
 	path = deps/glfw
 	url = git@github.com:glfw/glfw.git
 [submodule "deps/dll"]
-	path = deps/dll
+	path = deps/boost/dll
 	url = git@github.com:boostorg/dll.git
 [submodule "deps/filesystem"]
 	path = deps/filesystem
