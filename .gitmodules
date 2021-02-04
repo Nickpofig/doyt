@@ -5,7 +5,7 @@
 	path = deps/boost/dll
 	url = git@github.com:boostorg/dll.git
 [submodule "deps/filesystem"]
-	path = deps/filesystem
+	path = deps/boost/filesystem
 	url = git@github.com:boostorg/filesystem.git
 [submodule "deps/boost/system"]
 	path = deps/boost/system
