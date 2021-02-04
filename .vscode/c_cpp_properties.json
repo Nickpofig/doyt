@@ -4,6 +4,7 @@
 			"name": "Win32",
 			"includePath": [
 				"${workspaceFolder}/**",
+				"D:/Rasul/Projects/c++/doyt/dependencies/boost_dll/include"
 			],
 			"defines": [
 				"_DEBUG",

@@ -10,7 +10,7 @@
 #define GLFW_DLL
 #include <windows.h>
 #include <GL/gl.h>
-#include <GLFW/glfw3.h> 
+#include <GLFW/glfw3.h>
 
 
 void panic(const char* message, ...)

@@ -1,0 +1,9 @@
+[submodule "deps/glfw"]
+	path = deps/glfw
+	url = git@github.com:glfw/glfw.git
+[submodule "deps/dll"]
+	path = deps/dll
+	url = git@github.com:boostorg/dll.git
+[submodule "deps/filesystem"]
+	path = deps/filesystem
+	url = git@github.com:boostorg/filesystem.git

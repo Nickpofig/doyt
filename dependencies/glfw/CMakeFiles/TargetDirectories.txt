@@ -1,6 +1,0 @@
-D:/Rasul/Projects/c++/doyt/dependencies/glfw/CMakeFiles/uninstall.dir
-D:/Rasul/Projects/c++/doyt/dependencies/glfw/CMakeFiles/INSTALL.dir
-D:/Rasul/Projects/c++/doyt/dependencies/glfw/CMakeFiles/ALL_BUILD.dir
-D:/Rasul/Projects/c++/doyt/dependencies/glfw/CMakeFiles/ZERO_CHECK.dir
-D:/Rasul/Projects/c++/doyt/dependencies/glfw/src/CMakeFiles/glfw.dir
-D:/Rasul/Projects/c++/doyt/dependencies/glfw/src/CMakeFiles/INSTALL.dir
