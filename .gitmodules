@@ -7,3 +7,6 @@
 [submodule "deps/filesystem"]
 	path = deps/filesystem
 	url = git@github.com:boostorg/filesystem.git
+[submodule "deps/boost/system"]
+	path = deps/boost/system
+	url = git@github.com:boostorg/system.git
