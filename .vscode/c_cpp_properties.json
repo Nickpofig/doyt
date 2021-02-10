@@ -3,8 +3,7 @@
 		{
 			"name": "Win32",
 			"includePath": [
-				"${workspaceFolder}/**",
-				"D:/Rasul/Projects/c++/doyt/dependencies/boost_dll/include"
+				"${workspaceFolder}/**"
 			],
 			"defines": [
 				"_DEBUG",

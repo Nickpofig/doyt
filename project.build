@@ -1,0 +1,13 @@
+clang++
+
+-std=c++17
+
+--include-directory "./deps/glfw/include"
+--include-directory "./deps/glad/include"
+
+-lD:/Rasul/Projects/c++/doyt/deps/glfw/src/Release/glfw3dll.lib
+
+./code/main.cpp
+./deps/glad/src/glad.c
+
+-o ./binary/doyt.exe

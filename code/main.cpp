@@ -8,8 +8,7 @@
 
 // GLFW declaration
 #define GLFW_DLL
-#include <windows.h>
-#include <GL/gl.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 
@@ -31,8 +30,6 @@ int main()
 		panic("GLFW failed to initialize!");
 	}
 
-	
-
 	/* Create a windowed mode window and its OpenGL context */
 	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
 	
@@ -44,6 +41,12 @@ int main()
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
+
+	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize OpenGL context" << std::endl;
+		return -1;
+	}
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window))
