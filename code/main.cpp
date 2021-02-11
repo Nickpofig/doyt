@@ -1,10 +1,6 @@
-// C++ libraries
+// std
 #include <iostream>
-
-// C libraries
-#include "stdlib.h"
-#include "stdio.h"
-#include "stdarg.h"
+#include <cstdarg>
 
 // GLFW declaration
 #define GLFW_DLL
@@ -16,7 +12,7 @@ void panic(const char* message, ...)
 {
 	va_list args;
 	va_start(args, message);
-	vfprintf(stderr, message, args);
+	std::vprintf(message, args);
 	va_end(args);
 	exit(-1);
 }
@@ -30,7 +26,7 @@ int main()
 		panic("GLFW failed to initialize!");
 	}
 
-	/* Create a windowed mode window and its OpenGL context */
+	// Creates a window
 	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
 	
 	if (!window)
@@ -39,7 +35,6 @@ int main()
 		return -1;
 	}
 
-	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
 
 	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
@@ -48,7 +43,7 @@ int main()
 		return -1;
 	}
 
-	/* Loop until the user closes the window */
+	// Loops until the user closes the window
 	while (!glfwWindowShouldClose(window))
 	{
 		/* Render here */

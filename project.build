@@ -5,9 +5,11 @@ clang++
 --include-directory "./deps/glfw/include"
 --include-directory "./deps/glad/include"
 
--lD:/Rasul/Projects/c++/doyt/deps/glfw/src/Release/glfw3dll.lib
+-Wdeprecated
 
+-l./deps/glfw/src/Release/glfw3dll.lib
+
+./binary/glad.o
 ./code/main.cpp
-./deps/glad/src/glad.c
 
 -o ./binary/doyt.exe
