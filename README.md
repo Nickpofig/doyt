@@ -28,3 +28,6 @@ On the Windows to compile glfw call:
 ```
 	msbuild GLFW.sln --property:Configuration=Release
 ```
+
+# Run the application
+Just call it. However, do not forget to add glfw.dll manually into the binary folder (I didn't automized it yet :P) 
