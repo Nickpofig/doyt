@@ -1,0 +1,20 @@
+clang++
+
+-std=c++17
+
+--include-directory "./deps/glfw/include"
+--include-directory "./deps/glad/include"
+
+--include-directory "./deps/imgui"
+--include-directory "./deps/imgui/backends"
+
+-l./deps/glfw/src/Release/glfw3dll.lib
+
+./binary/glad.o
+
+./code/test_imgui.cpp
+./deps/imgui/backends/imgui_impl_glfw.cpp
+./deps/imgui/backends/imgui_impl_opengl3.cpp
+./deps/imgui/imgui*.cpp
+
+-o ./binary/test_imgui.exe
