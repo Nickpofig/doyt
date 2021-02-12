@@ -1,3 +1,17 @@
+// === REMARK ===
+// Well, this is my kind of a ...build system.
+//
+// I basically do not like and don't want to waste my time in learning a "modern" build system.
+// That is why, I wrote, basically, a simple terminal command supplier.    :D
+// And it clearly not an actual build system. yet.
+//
+// Maybe, I will upgrade it later on, but for now - it does its job.    :I
+//
+// And, honestly, I am not even sure what I want from it (besides stupid simplicity)    :/
+// ==============
+
+
+// Just to remove Windows annoying stuff    -_-
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdlib.h>
