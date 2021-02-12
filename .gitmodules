@@ -10,3 +10,6 @@
 [submodule "deps/boost/system"]
 	path = deps/boost/system
 	url = git@github.com:boostorg/system.git
+[submodule "deps/imgui"]
+	path = deps/imgui
+	url = git@github.com:ocornut/imgui.git
