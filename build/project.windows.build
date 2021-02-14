@@ -1,3 +1,5 @@
+# This is a build script to build the application on the "Windows" os.
+
 @Generating glfw solution...
 # <!> You must to have CMake installed and set in the PATH 
 cmake
