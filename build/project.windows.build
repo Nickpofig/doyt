@@ -1,6 +1,6 @@
 # This is a build script to build the application on the "Windows" os.
 
-@Generating glfw solution...
+@Building glfw...
 # <!> You must to have CMake installed and set in the PATH 
 cmake
 # if we want glfw to be a shared library
@@ -14,17 +14,25 @@ cmake
 
 	./deps/glfw
 =
-@Building glfw...
+
+@Compiling glfw...
 # <!> You must to have MSBuild installed and set in the PATH
-msbuild ./deps/glfw/GLFW.sln -p:Configuration=Release
+msbuild -maxcpucount -verbosity:quiet -nologo ./deps/glfw/GLFW.sln -property:Configuration=Release
 =
+
+@Ensuring ./binary directoy exists...
+if not exist .\binary mkdir .\binary
+=
+
 @Moving glfw.dll...
 # (To where our application executable will be located)
 # YES! this WINDOWS commamd NEEEDS exactly this type of 'slashes'.    -_-
 move ".\deps\glfw\src\Release\glfw3.dll" ".\binary\glfw3.dll"
 = 
+
 @Building glad...
 build.exe ./deps/glad/glad.build
 =
+
 @Building engine...
 build.exe ./build/engine.build

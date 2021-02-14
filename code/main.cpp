@@ -17,6 +17,11 @@ void panic(const char* message, ...)
 	exit(-1);
 }
 
+void print_mouse_position(GLFWwindow* window, double x, double y)
+{
+	std::cout << "mouse: [" << x << ", " << y << "]" << std::endl;
+}
+
 int main()
 {
 	std::cout << "Doyt!" << std::endl;
@@ -36,6 +41,7 @@ int main()
 	}
 
 	glfwMakeContextCurrent(window);
+	glfwSetCursorPosCallback(window, print_mouse_position);
 
 	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
 	{

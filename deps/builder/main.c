@@ -143,7 +143,7 @@ int execute_next_command(char *input, int input_length, int *input_index)
 	if (!output) panic("Could not reallocate output!\n");
 
 	// Prints the builded command
-	if (label) printf("~>%s\n", label);
+	if (label) printf("<+> %s\n", label);
 	printf("%s\n", output);
 	fflush(stdout);
 
