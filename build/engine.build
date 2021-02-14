@@ -1,15 +1,23 @@
+@Compiling engine...
+
+# Call Compiler
 clang++
 
+# Sets C++ Verison
 -std=c++17
 
+# Inncludes GLFW, GLAD headers
 --include-directory "./deps/glfw/include"
 --include-directory "./deps/glad/include"
 
--Wdeprecated
+-Wall
 
+# Links with glfw dll binding, glad binary
 -l./deps/glfw/src/Release/glfw3dll.lib
-
 ./binary/glad.o
+
+# Includes source code
 ./code/main.cpp
 
+# Sets output binary
 -o ./binary/doyt.exe

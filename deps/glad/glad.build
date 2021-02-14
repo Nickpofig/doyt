@@ -1,8 +1,13 @@
+@Compiling glad...
+
+# Compiler
 clang
 
--c 
-./deps/glad/src/glad.c 
+# Source code
+-c ./deps/glad/src/glad.c 
 
+# Header code
 --include-directory ./deps/glad/include 
 
+# Output binary
 -o ./binary/glad.o

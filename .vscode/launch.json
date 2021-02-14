@@ -1,0 +1,24 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "run project builder",
+			"type": "lldb",
+			"request": "launch",
+			"program": "${workspaceFolder}\\build.exe",
+			"args": ["project.build"],
+			"preLaunchTask": "compile builder"
+		},
+		{
+			"name": "run glad builder",
+			"type": "lldb",
+			"request": "launch",
+			"program": "./build",
+			"args": ["./deps/glad/glad.build"],
+			"preLaunchTask": "compile builder"
+		},
+	]
+}
