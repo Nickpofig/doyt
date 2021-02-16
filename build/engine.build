@@ -7,8 +7,12 @@ clang++
 -std=c++17
 
 # Inncludes GLFW, GLAD headers
+--include-directory "./code"
 --include-directory "./deps/glfw/include"
 --include-directory "./deps/glad/include"
+
+# Defines GLFW_DLL preprocessor
+--define-macro GLFW_DLL 
 
 -Wall
 
@@ -18,6 +22,7 @@ clang++
 
 # Includes source code
 ./code/main.cpp
+./code/core.cpp
 
 # Sets output binary
 -o ./binary/doyt.exe

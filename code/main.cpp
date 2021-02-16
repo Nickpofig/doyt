@@ -1,39 +1,57 @@
 // std
 #include <iostream>
-#include <cstdarg>
 
 // GLFW declaration
-#define GLFW_DLL
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
-
-void panic(const char* message, ...)
-{
-	va_list args;
-	va_start(args, message);
-	std::vprintf(message, args);
-	va_end(args);
-	exit(-1);
-}
-
-void print_mouse_position(GLFWwindow* window, double x, double y)
-{
-	std::cout << "mouse: [" << x << ", " << y << "]" << std::endl;
-}
+// engine
+#include "core.h"
 
 int main()
 {
+	doyt::initialize();
+
 	std::cout << "Doyt!" << std::endl;
 
 	if (!glfwInit())
 	{
-		panic("GLFW failed to initialize!");
+		doyt::panic("GLFW failed to initialize!");
 	}
 
-	// Creates a window
-	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+	GLFWmonitor *monitor = glfwGetPrimaryMonitor();
+	int monitor_x       = 0, 
+	    monitor_y       = 0, 
+		monitor_width   = 0, 
+		monitor_height  = 0;
 	
+	glfwGetMonitorWorkarea(monitor, &monitor_x, &monitor_y, &monitor_width, &monitor_height);
+	
+	// Creates a window
+	GLFWwindow *window = glfwCreateWindow(
+		monitor_width, 
+		monitor_height, 
+		"Hello World", 
+		monitor,
+		NULL
+	);
+	
+	std::cout << "x: " << monitor_x 
+	          << ", y: " << monitor_y 
+	          << ", width: " << monitor_width 
+	          << ", height: " << monitor_height 
+	<< std::endl;
+	
+	glfwSetWindowMonitor(
+		window, 
+		monitor, 
+		monitor_x, 
+		monitor_y, 
+		monitor_width, 
+		monitor_height, 
+		GLFW_DONT_CARE
+	);
+
 	if (!window)
 	{
 		glfwTerminate();
@@ -41,7 +59,6 @@ int main()
 	}
 
 	glfwMakeContextCurrent(window);
-	glfwSetCursorPosCallback(window, print_mouse_position);
 
 	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
 	{
