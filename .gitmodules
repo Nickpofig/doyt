@@ -13,3 +13,6 @@
 [submodule "deps/imgui"]
 	path = deps/imgui
 	url = git@github.com:ocornut/imgui.git
+[submodule "deps/system-run"]
+	path = deps/system-run
+	url = git@github.com:Nickpofig/system-run.git
