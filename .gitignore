@@ -1,3 +1,14 @@
-/build.exe
-/binary
-/.vscode
+# Generally ignores everything except files within the allowed directories
+/*
+!/build/*
+!/code/*
+!/deps/*
+!.gitignore
+!.gitmodules
+!LICENSE
+!README.md
+
+# Ignores all binary files
+*.exe
+*.dll
+*.o
