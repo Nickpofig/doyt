@@ -2,15 +2,15 @@
 The game engine I dream to write - Doyt!
 
 # Compilation
-if you link against *shared* glfw libray then add:
+To compile the application you firstly need to compile the system-run program.
+For example, on windows using clang compiler frontend:
 ```
-	-DGLFW_DLL 
-```
-to your application/library compilation command or add it directly in code.
+	clang ./deps/system-run/main.c -o run.exe
+``` 
 
-To compile the application run: 
+After that find *project.X.build* and call
 ```
-./build project.build
+	./run project.X.build
 ```
 
 # GLFW Compilation
