@@ -1,8 +1,8 @@
 # Generally ignores everything except files within the allowed directories
 /*
-!/build/*
-!/code/*
-!/deps/*
+!/build/
+!/code/
+!/deps/
 !.gitignore
 !.gitmodules
 !LICENSE
