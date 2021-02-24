@@ -13,21 +13,5 @@ After that find *project.X.build* and call
 	./run project.X.build
 ```
 
-# GLFW Compilation
-GLFW uses cmake to create build files. (in case of windows it will generate microsoft build files: sln, vcproj, etc.)
-```
-	cmake
-	-DBUILD_SHARED_LIBS=ON    // if we want glfw to be a shared library
-	-DGLFW_BUILD_EXAMPLES=OFF // no examples
-	-DGLFW_BUILD_TESTS=OFF    // no tests
-	-DGLFW_BUILS_DOCS=OFF     // no docs
-	<glfw-directory>
-```
-
-On the Windows to compile glfw call:
-```
-	msbuild GLFW.sln --property:Configuration=Release
-```
-
-# Run the application
-Just call it. However, do not forget to add glfw.dll manually into the binary folder (I didn't automized it yet :P) 
+Right now, there is only one script to fully build project and it is for Windows platform.
+However, it does NOT mean that you could NOT compile project on your machine. I try to keep code as platform-independent as possible, so theoretically you should be able to compile it. Just read available build scripts and you will find out that they are *very* simple. After that you could write your platform specific implementation of those script where it needs and run them via system-run (or you could write a bash script and run it insteed/it really does not matter)
