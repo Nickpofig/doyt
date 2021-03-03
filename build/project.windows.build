@@ -31,8 +31,8 @@ move ".\deps\glfw\src\Release\glfw3.dll" ".\binary\glfw3.dll"
 = 
 
 @Building glad...
-build.exe ./deps/glad/glad.build
+run.exe ./deps/glad/glad.build
 =
 
 @Building engine...
-build.exe ./build/engine.build
+run.exe ./build/engine.build
